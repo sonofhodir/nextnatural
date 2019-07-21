@@ -1,0 +1,26 @@
+Please write a function in Python which receives a natural decimal N-digit number
+(0<N<15) as an input and returns the minimal next N-digit number with the same sum
+of digits or -1 if there isn't one.
+Examples:
+Input: Output:
+123 132
+0200 1001
+09999999999999 18999999999999
+90 -1
+9999 -1
+Deliverable:
+• A	fully	functional	solution	with production	level	code	(high	code	quality,	
+unittesting,	comments,	…)
+• Do	not	use	brute	force.
+
+Solution:
+Split the digits of the number into 4 regions :
+1st: Trailing zeros .
+2nd: The lowest digit not in Region 1.
+3rd: Consecutive 9s starting with the digit above Region 2.
+4th: All remaining digits.
+
+Then using formula below finiding next natural number :
+[Region 4+1] [Region 1] [Region 2-1] [Region 3] 
+
+When no answer available returns -1
